@@ -408,7 +408,7 @@ export const getRichDescription = (
 
 export const getCancellationReason = (calEvent: Pick<CalendarEvent, "cancellationReason">, t: TFunction) => {
   if (!calEvent.cancellationReason) return "";
-  return `${t("cancellation_reason")}:\n${calEvent.cancellationReason}`;
+  return `${t("cancellation_reason")}:\n${calEvent.cancellationReason.replace("$RCH$", "")}`;
 };
 
 export const isDailyVideoCall = (calEvent: Pick<CalendarEvent, "videoCallData">): boolean => {
